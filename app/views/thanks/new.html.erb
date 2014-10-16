@@ -1,0 +1,7 @@
+<%= form_for @thank do |f| %>
+    recipient_id : <%= f.number_field :recipient_id %>
+    message : <%= f.text_field :message %>
+    <%= f.hidden_field :sender_id, value: current_user.id %>
+
+    <%= f.submit %>
+<% end %>

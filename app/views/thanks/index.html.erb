@@ -1,0 +1,12 @@
+<h1>home</h1>
+
+<%= current_user.inspect %>
+
+<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+
+<%= link_to("give thanks", new_thank_path) %>
+<hr>
+<%  @thanks.each do |thank| %>
+  <%= render partial: "thank", locals: {thank: thank} %>
+  <hr>
+<% end %>
